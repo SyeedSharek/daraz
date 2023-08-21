@@ -70,6 +70,7 @@ Route::get('/product_status{product}',[ProductController::class,'change_status']
 Route::get('/',[HomeController::class,'index']);
 Route::get('/view_product/{id}',[HomeController::class,'details_product']);
 Route::get('/cat_by_product/{id}',[HomeController::class,'cat_products']);
+Route::get('/brand_by_product/{id}',[HomeController::class,'brand_products']);
 Route::get('/subcat_by_product/{id}',[HomeController::class,'subcat_products']);
 Route::get('/search',[HomeController::class,'search_view']);
 
