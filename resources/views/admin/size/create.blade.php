@@ -1,7 +1,8 @@
 
 @extends('admin.admin_master')
 
-@section('contain')
+@section('admin_contain')
+
 
 
 
@@ -38,32 +39,33 @@
 
             </div>
 
+
             <div class="box-content">
 
-                <form class="form-horizontal" action="{{'/sizes/'}}" method="post" enctype="multipart/form-data" >
+                <form class="form-horizontal" action="{{url('/sizes/')}}" method="post" enctype="multipart/form-data" >
                     @csrf
                     
                     <fieldset>
                         <div class="control-group">
-                            <label class="control-label" for="date01">Size </label>
+                            <label class="control-label" for="date01">Color Name</label>
                             <div class="controls">
-                                <input type="text" class="input-xlarge" name="size" id="input" data-role="tagsinput" required>
+                                <input type="text" name="size" data-role="tagsinput" placeholder="Add tags" required />
                             </div>
-                        </div>
+                         </div>
+                       
 
 
-                                      
-
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Add Size</button>
-                        </div>
+                         <div class="">
+                            <input type="submit" value="Add Size" >
+                        </div> 
                     </fieldset>
                 </form>
 
-            </div>
-        </div><!--/span-->
-    </div><!--/row-->
-    </div><!--/row-->
 
-		
+            
+   
+
+
+
+
 @endsection

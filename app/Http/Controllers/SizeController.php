@@ -12,7 +12,8 @@ class SizeController extends Controller
      */
     public function index()
     {
-        //
+        $sizes = Size::all();
+        return view('admin.size.index',compact('sizes'));
     }
 
     /**
@@ -28,7 +29,12 @@ class SizeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sizes = explode(',',$request->size);
+        $size = new size();
+        $size->size = json_encode($sizes);
+        
+        $size->save();
+        return redirect()->back()->with('message','SuccessFully Size Add');
     }
 
     /**
@@ -58,8 +64,24 @@ class SizeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Size $size)
     {
-        //
+        $delete = $size->delete();
+        if($delete){
+            return redirect()->back()->with('message','Successfully Change');
+        }
+    }
+
+    public function change_status(Size $size){
+
+        if($size->status==1){
+            $size->update(['status'=>0]);
+        }
+        else{
+            $size->update(['status'=>1]);
+        }
+        
+        return redirect()->back()->with('message','Successfully Change');
+        
     }
 }

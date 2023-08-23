@@ -29,31 +29,35 @@
               <thead>
                   <tr>
                       <th style="width:5%">ID</th>
-                      <th style="width:15%">Category</th>
-                      <th style="width:15%">Name</th>
-                      <th style="width:25%">Description</th>
-                      <th style="width:10%">Image</th>
+                      <th style="width:15%">Size</th>
+                      
                       <th>Status</th>
                       <th>Actions</th>
                   </tr>
               </thead> 
-              @foreach ($categories as $category )
+              @foreach ($sizes as $size )
                   
                
               <tbody>
                 <tr>
-                    <td>{{ $category->id }}</td>
-                    <td class="center">{{ $category->id }}</td>
-                    <td class="center">{{ $category->name }}</td>
-                    <td class="center">{{ $category->description }}</td>
-                    <td>
-                        <img style="height: 80px" width="120px" src="{{ asset('/storage/'.$category->image) }}" alt="" >
-                    </td>
+                    <td>{{ $size->id }}</td>
 
+                    <td>
+                        @foreach (Json_decode($size->size) as $sizes )
+
+                        <ul class="span3">
+                            {{ $sizes }}
+                        </ul>
+                            
+                        @endforeach 
+                    
+                     </td>
+                 
+                    
 
                     
                     <td class="center">
-                        @if ($category->status==1)
+                        @if ($size->status==1)
                             
                        <span class="label label-success">Active</span>
                        @else
@@ -66,15 +70,15 @@
 
                                                    
                          <div class="span2">
-                             @if ($category->status==1)
+                             @if ($size->status==1)
 
-                         <a href="{{ url('/cat_status').$category->id }}" class="btn btn-success" >
+                         <a href="{{ url('/size_status').$size->id }}" class="btn btn-success" >
                             <i class="halflings-icon white thumbs-down"></i> 
                             
                          </a>
                         
                          @else
-                         <a href="{{ url('/cat_status').$category->id }}" class="btn btn-danger" >
+                         <a href="{{ url('/size_status').$size->id }}" class="btn btn-danger" >
                             <i class="halflings-icon white thumbs-up"></i> 
                            
                          </a>
@@ -84,14 +88,14 @@
 
                         <div class="span2">
 
-                         <a href="{{url('/categories/'.$category->id.'/edit') }}" class="btn btn-info" >
+                         <a href="{{url('/sizes/'.$size->id.'/edit') }}" class="btn btn-info" >
                             <i class="halflings-icon white edit"></i>  
                          </a>
 
                         </div>
 
                         <div class="span2">
-                            <form action="{{ url('/categories/'.$category->id )}}" method="post">
+                            <form action="{{ url('/sizes/'.$size->id )}}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit"> <i class="halflings-icon white trash"></i> </button>

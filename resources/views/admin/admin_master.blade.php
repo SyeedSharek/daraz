@@ -4,7 +4,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<title>Daraz Admin Panel</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -18,16 +18,18 @@
 	<link id="bootstrap-style" href="{{ asset('admin/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('admin/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
 	<link id="base-style" href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
+	<link id="base-style" href="{{ asset('admin/css/taginputs.css') }}" rel="stylesheet">
+	<link id="base-style" href="{{ asset('admin/css/bootstrap-tagsinput.css') }}" rel="stylesheet">
 	<link id="base-style-responsive" href="{{ asset('admin/css/style-responsive.css') }}" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
-		<link href="{{ asset('admin/css/bootstrap-tagsinput') }}" rel="stylesheet">
+	
+		
+		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 	<!-- end: CSS -->
 	
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]-->
-	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<link id="ie-style" href="{{ asset('admin/ss/ie.css') }}c" rel="stylesheet">
+	  	
 	<!--[endif]-->
 	
 	<!--[if IE 9]-->
@@ -55,7 +57,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Metro</span></a>
+				<a class="brand" href="{{ url('/deshbord/') }}"><span>Daraz</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -565,14 +567,14 @@
 	
 		<script src="{{ asset('admin/js/counter.js') }}"></script>
 	
-		<script src="{{ asset('admin.js/retina.js') }}"></script>
+	
 
 		<script src="{{ asset('admin/js/custom.js') }}"></script>
+		<script src="{{ asset('admin/js/tagsinput.js') }}"></script>
+		
 
-		<script src="{{ asset('admin/css/bootstrap-tagsinput') }}"></script>
-		<script src="{{ asset('admin/css/bootstrap-tagsinput.min') }}"></script>
-		<script src="{{ asset('admin/css/bootstrap-tagsinput-angular') }}"></script>
-		<script src="{{ asset('admin/css/bootstrap-tagsinput-angular.min') }}"></script>
+	
+		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 		
 	<!-- end: JavaScript-->
 	

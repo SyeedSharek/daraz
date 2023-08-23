@@ -19,6 +19,7 @@ use App\Http\Controllers\OrderController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,6 +58,7 @@ Route::get('/unt_status{unit}',[UnitController::class,'change_status']);
 
 //Size Route.................................
 Route::resource('/sizes', SizeController::class);
+Route::get('/size_status{size}',[SizeController::class,'change_status']);
 
 
 //Products    Route.................................
