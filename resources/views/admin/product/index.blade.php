@@ -78,6 +78,7 @@
                       
                         
                         <img style="height: 50px; width= 50px;" src="{{asset('/product_image/'.$image)}}" alt="" >
+                        
                         @endforeach
                     </td>
                     
